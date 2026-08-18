@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNG Browser | مرورگر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="browser">
+        <!-- نوار آدرس -->
+        <div class="address-bar">
+            <button class="nav-btn" onclick="goBack()">→</button>
+            <button class="nav-btn" onclick="goForward()">←</button>
+            <button class="nav-btn" onclick="refreshPage()">🔄</button>
+            <input type="text" id="urlInput" placeholder="آدرس سایت را وارد کنید..." onkeypress="handleEnter(event)">
+            <button class="go-btn" onclick="navigate()">برو</button>
+        </div>
+
+        <!-- پیشنهادات سریع -->
+        <div class="quick-links">
+            <button onclick="openSite('https://www.google.com')">🔍 گوگل</button>
+            <button onclick="openSite('https://www.youtube.com')">▶️ یوتیوب</button>
+            <button onclick="openSite('https://www.wikipedia.org')">📚 ویکی‌پدیا</button>
+            <button onclick="openSite('https://www.aparat.com')">🎬 آپارات</button>
+            <button onclick="openSite('https://www.digikala.com')">🛒 دیجی‌کالا</button>
+        </div>
+
+        <!-- نمایش سایت -->
+        <iframe id="browserFrame" src="https://www.google.com" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+
+        <!-- فوتر -->
+        <div class="footer">
+            GNG Browser v1.0 | Graham Team
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
