@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- هدر GNG -->
     <div class="gng-header">
         <div class="gng-logo" onclick="goHome()">
             <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
@@ -15,10 +16,12 @@
         <span class="gng-tag">Search</span>
         <button class="header-btn" onclick="goHome()">🏠</button>
         <button class="header-btn" onclick="reloadFrame()">🔄</button>
+        <button class="header-btn" onclick="tryNext()">⏭️</button>
     </div>
 
+    <!-- فریم جستجو -->
     <div class="browser-frame">
-        <iframe id="googleFrame" src="https://www.google.com/webhp?igu=1" frameborder="0"></iframe>
+        <iframe id="searchFrame" src="" frameborder="0"></iframe>
     </div>
 
     <script src="script.js"></script>
