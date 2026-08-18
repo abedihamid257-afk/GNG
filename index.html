@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- هدر -->
     <div class="gng-header">
         <div class="gng-logo" onclick="goHome()">
             <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
@@ -17,8 +18,17 @@
         <button class="header-btn" onclick="reloadFrame()">🔄</button>
     </div>
 
+    <!-- فریم گوگل -->
     <div class="browser-frame">
         <iframe id="googleFrame" src="https://www.google.com/webhp?igu=1" frameborder="0"></iframe>
+        
+        <!-- لوگوی GNG روی گوگل -->
+        <div class="gng-overlay" id="gngOverlay" onclick="hideOverlay()">
+            <div class="overlay-logo">
+                <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
+            </div>
+            <p class="overlay-text">کلیک کنید برای جستجو</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
