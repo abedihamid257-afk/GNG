@@ -3,37 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNG Browser | مرورگر</title>
+    <title>GNG Search | جستجو</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="browser">
-        <!-- نوار آدرس -->
-        <div class="address-bar">
-            <button class="nav-btn" onclick="goBack()">→</button>
-            <button class="nav-btn" onclick="goForward()">←</button>
-            <button class="nav-btn" onclick="refreshPage()">🔄</button>
-            <input type="text" id="urlInput" placeholder="آدرس سایت را وارد کنید..." onkeypress="handleEnter(event)">
-            <button class="go-btn" onclick="navigate()">برو</button>
+    <!-- صفحه اصلی -->
+    <div class="home-page" id="homePage">
+        <div class="home-container">
+            <div class="gng-logo">
+                <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="جستجو در GNG..." onkeypress="handleEnter(event)">
+                <button onclick="doSearch()">🔍</button>
+            </div>
+            
+            <div class="search-buttons">
+                <button onclick="doSearch()">جستجوی GNG</button>
+                <button onclick="feelingLucky()">خوش‌شانسی</button>
+            </div>
         </div>
+    </div>
 
-        <!-- پیشنهادات سریع -->
-        <div class="quick-links">
-            <button onclick="openSite('https://www.google.com')">🔍 گوگل</button>
-            <button onclick="openSite('https://www.youtube.com')">▶️ یوتیوب</button>
-            <button onclick="openSite('https://www.wikipedia.org')">📚 ویکی‌پدیا</button>
-            <button onclick="openSite('https://www.aparat.com')">🎬 آپارات</button>
-            <button onclick="openSite('https://www.digikala.com')">🛒 دیجی‌کالا</button>
+    <!-- صفحه نتایج -->
+    <div class="results-page" id="resultsPage" style="display:none;">
+        <div class="results-header">
+            <div class="mini-logo" onclick="goHome()">⚡GNG</div>
+            <div class="search-box-small">
+                <input type="text" id="resultsInput" onkeypress="handleEnterResults(event)">
+                <button onclick="doSearchFromResults()">🔍</button>
+            </div>
         </div>
-
-        <!-- نمایش سایت -->
-        <iframe id="browserFrame" src="https://www.google.com" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
-
-        <!-- فوتر -->
-        <div class="footer">
-            GNG Browser v1.0 | Graham Team
-        </div>
+        
+        <div class="results-info" id="resultsInfo"></div>
+        <div class="results-list" id="resultsList"></div>
     </div>
 
     <script src="script.js"></script>
