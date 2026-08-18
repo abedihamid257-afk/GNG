@@ -1,26 +1,73 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNG Search</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <div class="gng-header">
-        <div class="gng-logo" onclick="goHome()">
-            <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
-        </div>
-        <span class="gng-tag">Search</span>
-        <button class="header-btn" onclick="goHome()">🏠 خانه</button>
-        <button class="header-btn" onclick="reloadFrame()">🔄 تازه‌سازی</button>
-    </div>
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
-    <div class="browser-frame">
-        <iframe id="googleFrame" src="https://www.google.com/webhp?igu=1" frameborder="0"></iframe>
-    </div>
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* هدر */
+.gng-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    height: 50px;
+}
+
+.gng-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.gng-tag {
+    color: #5f6368;
+    font-size: 0.8rem;
+    flex: 1;
+}
+
+.header-btn {
+    background: #f1f3f4;
+    border: 1px solid #dadce0;
+    color: #202124;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.header-btn:hover {
+    background: #e8eaed;
+}
+
+/* فریم - این مهمه */
+.browser-frame {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    min-height: 0;
+}
+
+.browser-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
