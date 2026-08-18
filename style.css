@@ -1,0 +1,167 @@
+:root {
+    --bg: #1a1a2e;
+    --bar: #16213e;
+    --text: #ffffff;
+    --border: #0f3460;
+    --accent: #e94560;
+    --btn: #533483;
+    --btn-hover: #3d2c6b;
+    --radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.browser {
+    width: 100%;
+    max-width: 800px;
+    height: 95vh;
+    background: var(--bar);
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* ===== نوار آدرس ===== */
+.address-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: var(--bar);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.nav-btn, .go-btn {
+    background: var(--btn);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    min-width: 40px;
+}
+
+.nav-btn:hover, .go-btn:hover {
+    background: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+#urlInput {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.9rem;
+    min-width: 150px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#urlInput:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+/* ===== لینک‌های سریع ===== */
+.quick-links {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background: var(--bar);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    flex-wrap: wrap;
+}
+
+.quick-links button {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.quick-links button:hover {
+    background: var(--btn);
+    border-color: var(--btn);
+    transform: translateY(-2px);
+}
+
+/* ===== فریم سایت ===== */
+#browserFrame {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: white;
+}
+
+/* ===== فوتر ===== */
+.footer {
+    text-align: center;
+    padding: 8px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    background: var(--bar);
+    border-top: 1px solid var(--border);
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 500px) {
+    .browser {
+        height: 98vh;
+        border-radius: 10px;
+    }
+    
+    .address-bar {
+        gap: 5px;
+        padding: 8px;
+    }
+    
+    .nav-btn, .go-btn {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+        min-width: 30px;
+    }
+    
+    #urlInput {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .quick-links {
+        gap: 5px;
+        padding: 8px;
+    }
+    
+    .quick-links button {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+}
