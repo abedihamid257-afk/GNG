@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
     background: #ffffff;
     height: 100vh;
     display: flex;
@@ -13,17 +13,16 @@ body {
     overflow: hidden;
 }
 
-/* ===== هدر ===== */
+/* هدر */
 .gng-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     background: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
     flex-shrink: 0;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    z-index: 100;
 }
 
 .gng-logo {
@@ -32,12 +31,6 @@ body {
     letter-spacing: -1px;
     cursor: pointer;
     user-select: none;
-    transition: 0.2s;
-}
-
-.gng-logo:hover {
-    opacity: 0.7;
-    transform: scale(1.05);
 }
 
 .gng-tag {
@@ -50,28 +43,25 @@ body {
     background: #f1f3f4;
     border: 1px solid #dadce0;
     color: #202124;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    padding: 8px 12px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0.85rem;
     transition: 0.2s;
+    font-family: inherit;
 }
 
 .header-btn:hover {
     background: #e8eaed;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* ===== فریم ===== */
+/* فریم */
 .browser-frame {
     flex: 1;
     width: 100%;
     position: relative;
+    background: #ffffff;
 }
 
 .browser-frame iframe {
@@ -81,11 +71,11 @@ body {
     display: block;
 }
 
-/* ===== ریسپانسیو ===== */
+/* موبایل */
 @media (max-width: 500px) {
     .gng-header {
-        padding: 8px 12px;
-        gap: 8px;
+        padding: 8px 10px;
+        gap: 6px;
     }
     
     .gng-logo {
@@ -97,8 +87,8 @@ body {
     }
     
     .header-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-radius: 15px;
     }
 }
