@@ -3,107 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GNG Search - موتور جستجوی سریع و امن با نتایج دقیق">
-    <meta name="keywords" content="جستجو, GNG, موتور جستجو, سرچ">
-    <meta name="author" content="Graham Team">
-    <meta property="og:title" content="GNG Search">
-    <meta property="og:description" content="موتور جستجوی GNG - سریع، امن، دقیق">
-    <meta property="og:type" content="website">
-    <title>GNG Search | موتور جستجو</title>
+    <title>GNG Search | جستجو</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ===== هدر اصلی ===== -->
-    <header class="site-header" role="banner">
-        <div class="header-container">
-            <a href="/" class="logo-link" aria-label="GNG Home">
-                <span class="logo-g">G</span><span class="logo-n">N</span><span class="logo-gold">G</span>
-            </a>
-            <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم" onclick="toggleTheme()">
-                🌙
-            </button>
+    <!-- هدر GNG -->
+    <div class="gng-header">
+        <div class="gng-logo" onclick="reloadFrame()">
+            <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
         </div>
-    </header>
+        <span class="gng-tag">Search</span>
+        <button class="home-btn" onclick="goHome()">🏠 خانه</button>
+        <button class="refresh-btn" onclick="reloadFrame()">🔄 تازه‌سازی</button>
+    </div>
 
-    <!-- ===== صفحه اصلی (جستجو) ===== -->
-    <main class="home-main" id="homePage" role="main">
-        <div class="home-container">
-            <h1 class="main-logo" aria-label="GNG Search">
-                <span style="color:#4285F4">G</span><span style="color:#EA4335">N</span><span style="color:#FBBC05">G</span>
-            </h1>
-            <p class="tagline">جستجوی هوشمند و سریع</p>
-            
-            <form id="searchForm" class="search-form" role="search" onsubmit="handleSearch(event)">
-                <div class="search-box">
-                    <span class="search-icon" aria-hidden="true">🔍</span>
-                    <input 
-                        type="text" 
-                        id="searchInput" 
-                        placeholder="عبارت مورد نظر را وارد کنید..." 
-                        autocomplete="off"
-                        aria-label="عبارت جستجو"
-                        required
-                    >
-                    <button type="button" class="clear-btn" id="clearBtn" aria-label="پاک کردن" onclick="clearSearch()" style="display:none;">
-                        ✕
-                    </button>
-                </div>
-                
-                <div class="search-actions">
-                    <button type="submit" class="btn-primary">جستجوی GNG</button>
-                    <button type="button" class="btn-secondary" onclick="feelingLucky()">خوش‌شانسی 🎲</button>
-                </div>
-            </form>
-            
-            <p class="privacy-note">🔒 نتایج شما به صورت امن پردازش می‌شود</p>
-        </div>
-    </main>
-
-    <!-- ===== صفحه نتایج ===== -->
-    <main class="results-main" id="resultsPage" style="display:none;" role="main">
-        <div class="results-header">
-            <a href="#" class="logo-link" onclick="goHome(event)" aria-label="بازگشت به خانه">
-                <span class="logo-g">G</span><span class="logo-n">N</span><span class="logo-gold">G</span>
-            </a>
-            
-            <form class="results-search-form" role="search" onsubmit="handleResultsSearch(event)">
-                <div class="results-search-box">
-                    <input 
-                        type="text" 
-                        id="resultsInput" 
-                        aria-label="جستجوی مجدد"
-                        autocomplete="off"
-                    >
-                    <button type="submit" class="results-search-btn" aria-label="جستجو">🔍</button>
-                </div>
-            </form>
-        </div>
-        
-        <div class="results-container">
-            <p class="results-count" id="resultsInfo" aria-live="polite"></p>
-            
-            <div class="results-list" id="resultsList" aria-live="polite">
-                <!-- نتایج اینجا لود می‌شوند -->
-            </div>
-            
-            <div class="pagination" id="pagination" style="display:none;">
-                <button class="page-btn" id="prevPage" onclick="changePage(-1)" aria-label="صفحه قبل">→ قبلی</button>
-                <span class="page-info" id="pageInfo"></span>
-                <button class="page-btn" id="nextPage" onclick="changePage(1)" aria-label="صفحه بعد">بعدی ←</button>
-            </div>
-        </div>
-    </main>
-
-    <!-- ===== فوتر ===== -->
-    <footer class="site-footer" role="contentinfo">
-        <p>© 2026 GNG Search | Graham Team</p>
-        <p class="footer-links">
-            <a href="#" onclick="return false;">درباره ما</a> |
-            <a href="#" onclick="return false;">حریم خصوصی</a> |
-            <a href="#" onclick="return false;">تماس</a>
-        </p>
-    </footer>
+    <!-- فریم گوگل -->
+    <div class="browser-frame">
+        <iframe id="googleFrame" src="https://www.google.com/webhp?igu=1" frameborder="0"></iframe>
+    </div>
 
     <script src="script.js"></script>
 </body>
